@@ -1,0 +1,23 @@
+<style>
+  body {
+    background: <%= @color %>;
+  }
+</style>
+
+<h1>Welcome!</h1>
+<p>About</p>
+
+<% @pictures.each do |pic| %>
+    <%= image_tag pic, class: "img-responsive" %>
+<% end %>
+
+<p>My favorits color is <%= @color %></p>
+
+<% if @size > 12 %> 
+    <p>Myshoes size is <%= @size %>. My feet are HUGE!</p>
+<% else %>
+    <p>Myshoes size is <%= @size %>.</p>
+<% end %>
+
+<%= link_to "Blue", about_path(color: "blue"), class: "btn btn-primary" %>
+<%= link_to "Red", about_path(color: "red"), class: "btn btn-danger" %>
